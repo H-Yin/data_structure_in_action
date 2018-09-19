@@ -1,3 +1,9 @@
+/* Hash Tree
+ * Date   : 2018-09-16
+ * Author : H.Yin
+ * Email  : csustyinhao@gmail.com
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
