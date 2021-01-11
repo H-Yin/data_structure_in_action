@@ -6,7 +6,7 @@ class KMPMatcher{
 private:
     string p;
     int *next;  
-    int *get_next(string p){
+    void get_next(string p){
         int i=0, j=-1;
         int len = p.size();
         next[0] = -1;

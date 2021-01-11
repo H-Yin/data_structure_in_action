@@ -3,7 +3,7 @@
 #include <string.h>
 
 int* get_next(char *p, int len){
-    int i=0, j=-1, t=0, temp;
+    int i=0, j=-1;
     int *next = (int *)malloc(sizeof(int) * len);
     next[0] = -1;
     /*
@@ -36,17 +36,13 @@ int* get_next(char *p, int len){
             next[i] = j;
         }
     }
-    for(int i=0; i<len;i++){
-        printf("%d ", next[i]);
-    }
-    printf("\n");
-    
     return next;
 }
 
 int kmp(char * t, char * p){
     int i=0, j=0;
     int *next = get_next(p, strlen(p));
+    // note: Implicit Type Conversion from int to size_t
     while((i < strlen(t)) && (j < 0 || j < strlen(p))){
         if(j == -1 || t[i] == p[j]){
             i++;
@@ -63,8 +59,8 @@ int kmp(char * t, char * p){
 }
 
 int main(){
-    char t[] = "bababcabcaabcabcabcacabc";
-    char p[] = "ababc";
+    char t[] = "hello";
+    char p[] = "ll";
     int index = kmp(t, p);
     printf("%d\n", index);
     return 0;
